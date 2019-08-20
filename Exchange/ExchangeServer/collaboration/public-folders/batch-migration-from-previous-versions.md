@@ -96,19 +96,19 @@ Perform the following prerequisite steps before you begin the migration.
    - Run the following command to take a snapshot of the original source folder structure:
 
      ```
-     Get-PublicFolder -Recurse | Export-CliXML C:\PFMigration\Legacy_PFStructure.xml
+     Get-PublicFolder -Recurse -ResultSize Unlimited | Export-CliXML C:\PFMigration\Legacy_PFStructure.xml
      ```
 
    - Run the following command to take a snapshot of public folder statistics such as item count, size, and owner:
 
      ```
-     Get-PublicFolderStatistics | Export-CliXML C:\PFMigration\Legacy_PFStatistics.xml
+     Get-PublicFolderStatistics  -ResultSize Unlimited | Export-CliXML C:\PFMigration\Legacy_PFStatistics.xml
      ```
 
    - Run the following command to take a snapshot of the permissions:
 
      ```
-     Get-PublicFolder -Recurse | Get-PublicFolderClientPermission | Select-Object Identity,User -ExpandProperty AccessRights | Export-CliXML C:\PFMigration\Legacy_PFPerms.xml
+     Get-PublicFolder -Recurse -ResultSize Unlimited | Get-PublicFolderClientPermission | Select-Object Identity,User -ExpandProperty AccessRights | Export-CliXML C:\PFMigration\Legacy_PFPerms.xml
      ```
 
 2. If the name of a public folder contains a backslash ( \\ ), migration will create the migrated public folders in the parent public folder. Before you migrate, we recommend that you rename any public folders that have a backslash in the name.
