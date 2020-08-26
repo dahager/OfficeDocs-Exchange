@@ -65,7 +65,7 @@ Here is an example of proper configuration in Exchange Online:
 
    - `Sync-ModernMailPublicFolders.ps1`
 
-   - `Sync-ModernMailPublicFolders.psd1`
+   - `SyncModernMailPublicFolders.strings.psd1`
    
     > [!NOTE]
     > The download package at this location contains additional files. To follow the instructions in this article, you only need the two listed above. 
